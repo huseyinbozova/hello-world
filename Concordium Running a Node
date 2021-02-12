@@ -1,0 +1,59 @@
+Concordium Running a Node (Düğüm çalıştırma) & Bir düğümün nasıl çalıştırılacağı hakkında bilgi.
+
+Concordium Nedir ?
+Concordium, protokole yerleştirilen ve düzenleyici gereksinimleri karşılamak üzere tasarlanmış, dünyada ilk olan, bilim tabanlı bir Proof of Stake blockchain'dir. Yani bir blok zincir ağıdır.
+ Concordium ölçeklenebilirlik, güvenlik, ademi merkeziyetçilik ve düzenleme dörtgenini çözmeye çalışmaktadır.
+Concordium Running a Node Düğümü Çalıştırın.
+Bu anlatımda, Concordium ağına katılan bilgisayarınızda bir düğümü nasıl çalıştırıcağınızı öğreniceksiniz. Bu, diğer düğmerden bloklar ve işlemler almanın yanı sıra bloklar ve işlemler hakkında bilgileri Concordium ağındaki düğmelere yaymanız anlamına gelir. Bu işlemleri izledikten sonra, şunları yapabiliceksiniz;
+-	Concordium düğümü çalıştır
+-	Ağ kontrol panalini gözlemleme 
+-	Concordium blok zincirinin durumunu doğrudan makinana sorgula. (Düğümü çalıştırmk için bir hesaba ihtiyacın yok)
+
+Başlamadan önce;
+Concordium düğümünü çalıştırmadan önce yapmanız gerekenler şunlar;
+1.	Docker’ı kurun ve çalıştırın.
+•	On Linux, Docker kök olmayan kullanıcı olarak çalıştırmak üzere izin verir.
+2.	Concordium Node ve Client  yazılımını incirin ve dosyayı çıkarın.
+
+Open Testnet’in önceki bir sürümünden yükseltin
+Open Testnet 4 için mevcut Concordium yazılımına yükseltmek için:
+•	En yeni Concordium yazılımını indirmek için yukarıdaki adımları izleyin.
+•	Concordium-node-reset-data yürütülebilir dosyasını sıkıştırılmış arşivden çalıştırın.
+                - For Mac kullanıcıları: Dosyayı ilk açtığınızda, sağ tık yapıp “concordium-node-reset-data” çift tıklayıp Açı seçiyoruz. Yazılımın tanımlanamayan bir geliştiriciye ait olduğunu belirten bir mesajı görüceksiniz. Oradan tekrar aç’ı seçiniz.
+                - Windows kullanıcıları için: Aracı ilk açtığınızda, “concordium-node-reset-data” çift tıklayın ve Açın .Yazılımın tanımlanamayan bir geliştiriciye ait olduğunu belirten bir mesaj görüceksiniz. 
+  Daha fazla bilgi => Yine de çalıştır’ı seçiniz.
+          * Araç şunları soracaktır:
+                         Kaydedilmiş anahtarları da kaldırmak istiyor musunuz ?
+Önceki sürümler için oluşturulan hesaplar artık Open Testnet 3’te geçerli değildir. Bu nedenle,önceki sürümlerden hesaplar sakladıysanız , tüm hesap anahtarlarını silen “y” girmenizi öneririm.
+Bir düğüm çalıştırma:
+Open Testnet’e katılacak bir istemciyi çalıştırmaya başlamak için şu adımları izleyin:
+1.	Concordium-node Sıkıştırılmamış arşivde yürütülebilir dosyayı açın.
+* For Mac kullanıcıları: Araca ilk açtığınızda, sağ tık yapıp concordium-node çift tıklayın Aç’ı seçin. Yazılım tınımlanamayanbir geliştiriciye ait olduğunu belirten bir mesaj belirecek. Tekrar Aç’ı seçiniz.
+* Windows kullanıcıları için:  Aracı ilk açtığınızda “concordium-node’a” çift tıklayın. Yazılımı tanımlanamayan bir geliştiriciye ait olduğunu belirten bir msj görünecektir. Göründükten sonra Daha fazla bilgi => Yinede çalıştır’ı seçin. 
+* Bir düğümü yeniden başlatırken “- - no-block-state-import” seçeneğini kullanın.Bu, yalnızca düğüm etkin değilken meydana gelen ve önyükleme sürecini hızlandırabilicek Concordium blok zincirine yapılan güncellemeleri indiricektir.
+2.Düğümünüz için bir ad giri. Bu ad, genel kontrol panelinde görüntülenicektir.
+3.Araç daha önce başlatıldıysa, başlamadan önce yerel düğüm veritabanını silmek isteyip istediğiniz sorular. “Y” silip sonrada bilgisayarınızda kayıtlı olan Concordium blockhain durumu hakkında bilgi yeniden olulşturulur. Yerel düğüm veritabanın silmenin, düğümünüzün Concordium ağına yetişmesinin daha uzun süreceği anlamına geldiğini unutmayın. 
+Araç şimdi Concordium Client görüntüsünü indirecek ve Docker'a yükleyecektir. İstemci başlatacak ve düğümün çalışmasıyla ilgili günlük kaydı bilgilerini vermeye başlayacaktır.
+Düğümünüzü kontrol panelinde görme 
+Koştuktan sonra “concordium-node” yapabilirsin.
+ * üzerinde düğüm bkz Ağ Dashboard 
+* bloklar, işlemler ve hesaplar hakkında bilgi sorgulama.
+Ağ kontrol panali 
+Müşterinin Concordium blok zincirinin durumunu yakalaması biraz zaman alacak. Bu, örnein, zincirdeki tüm bloklar hakkında bilgi indirmeyi içerir.
+Diğer bilgilerin yanı sıra, Ağ Kontrol Panelinde, düğümünüzün zincire yetişmesinin ne kadar süreceği hakkında bir fikir edinebilirsiniz. Bunun için, düğümün Uzunluk değerini (düğümümüzün aldığı blok sayısı) panonun üstünde görüntülenen Chain Len değeri (ağdaki en uzun zicirdeki blok satısı ) ile karşılaştırabilirsiniz. 
+Gelen bağlantıları etkinleştirme 
+Düğümünüzü bir güvenlik durumu duvarının arkasından veya ev yönlendiricinizin arkasında çalıştırıyorsanız, muhtemelen yalnızca diğer düğmelere bağlanabiliceksiniz, ancak diğer düğümler düğümünüze bağlantı başlatmayacak. Bu tamamen iyidir ve düğümünüzü Concordium ağına tamamen katılacaktır. İşlemleri gönderebilicek ve eğer bu şekilde yapılandırılmışsa pişirip sonuçlandırılabildecek.
+
+Bununla birlikte, gelen bağlantıları etkinleştirerek düğümünüzü daha da iyi bie ağa katılımcısı yapabilirsiniz. Varsayılan olarak, gelen bağlantılar için bağlantı “concordium-node” noktasını dinler“8888”. Ağınıza ve platform yapılandırmanıza bağlı olarak,“8888” yönlendiriciniz üzerindeki harici bir bağlantı noktasının yönlendirmeniz, onu güvenlik duvarınızda açmanız ve ya her ikisine birden ihtiyacınız olacaktır. Bunun nasıl yapılacağını ilişkin ayrıntılar, yapılandırmanıza bağlı olacaktır.
+Bağlantı noktalarını yapılandırma
+Düğüm, düğüm satırını başlatırken uygun komut satırı argümanları sağlanarak yapılandırılabilen dört bağlantı noktasını dinler. Düğüm tarafından kullanılan bağlantı noktaları aşağıda verildiği gibidir;
+    * 8888, ile ayarlanabilen eşler arası bağ bağlantısı için bağlantı noktası 
+    --listen-node-port
+    * 8082, ara yazılım tarafından kullanılan bağlantı noktası,
+    --listen-middleware-port
+    * 10000, gRPC  portu ile ayarlanabilen –listen-grpc-port
+Docker kapsayıcının üzerindeki eşlemeleri değiştirirken durdurulmalı ( düğüm durdurulmalı ), sıfırlanmalı ve yeniden başlatılmalıdır. Konteyneri sıfırlamak için bir terminalde kullanın “concordium-node-reset-data” veya çalıştırın. “docker rm concordium-client
+Tevsiyem güvenlik duvarı portu 8888 tarihinde Genel bağlantıları (eşler akran ağ bağlantı noktası) sadece izin verecek şekilde yapılandırılmalıdır. Diğer bağlantı noktalarına erişimi olan biri, düğümünüzün veya düğüme kaydettiğiniz hesapların kontrolünü ele geçirebilir.
+Düğüm durdurma:
+Düğüm durdurmak için CTRL+c tuşlarına basın ve düğümün temiz bir kapatma yapmasını bekleyin. 
+İstemciyi açıkça kapatmadan pencereyi yanlışıkla kapatırsanız, Docker’dan arka planda çalışmaya devam eder. Bu durumda, “concordium-node-stop” *çift “concordium-node” dosyayı çalıştırılabilir dosyayı açtığınız şekilde kullanın.
